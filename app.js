@@ -42,10 +42,10 @@ else showLogin();
 async function apiFetch(path) {
   try {
     const res = await fetch(`${API_BASE}${path}`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Accept': 'application/json',
+        "Authorization": "Bearer " + apiKey,
+        "Accept": "application/json",
       },
     });
 
@@ -196,7 +196,7 @@ function renderStore(items) {
         ? `<div class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
            In stock: ${item.stock}
          </div>`
-        : '';
+        : "";
 
     card.innerHTML = `
       ${limitedBadge}
@@ -204,13 +204,13 @@ function renderStore(items) {
         src="${item.image_url}" 
         class="w-full h-40 object-contain mb-3" 
         alt="${item.name}"
-        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%23999%22%3E🍪%3C/text%3E%3C/svg%3E'"
+        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%23999%22%3E%F0%9F%8D%AA%3C/text%3E%3C/svg%3E'"
       >
       <h3 class="font-bold text-lg mb-2 text-gray-800 line-clamp-1">${item.name}</h3>
-      ${item.description ? `<p class="text-sm text-gray-600 mb-3 line-clamp-2">${item.description}</p>` : ''}
+      ${item.description ? `<p class="text-sm text-gray-600 mb-3 line-clamp-2">${item.description}</p>` : ""}
       <div class="flex items-center justify-between mb-3">
         <span class="text-2xl font-bold text-[#c88a3d]">${price} 🍪</span>
-        ${item.limited ? '<span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full font-semibold">Limited!</span>' : ''}
+        ${item.limited ? '<span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full font-semibold">Limited!</span>' : ""}
       </div>
       <button class="w-full bg-gradient-to-r from-[#8bbf4d] to-[#7aa63d] px-4 py-3 rounded-lg text-white font-bold hover:from-[#7aa63d] hover:to-[#699530] transition shadow-md">
         Add to wishlist
